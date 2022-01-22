@@ -27,8 +27,7 @@ train and test. The test_size as 0.5 between test and tune.
 3. Built a Latent Dirichlet Allocation (LDA) model by calling fit_transform function to 
 build it. We get the topic model (get_documet_topics) which we use as an input into 
 Support Vector Machine (SVM) classifier as a feature vector after scaling the vectors
-and used as ‘X’ with ‘y’ being my targets where I am using document topic matrix (7919, 
-20) with all my parameters (alpha, beta and topics) and then tuning the machine 
+and used as ‘X’ with ‘y’ being my targets where I am using document topic matrix (7919, 20) with all my parameters (alpha, beta and topics) and then tuning the machine 
 learning model using tuning set where the GridsearchCV is used to tune the parameters
 and to find the ideal number of parameters. Here, using perplexity as a metric to tune 
 the number of topics.
@@ -44,8 +43,15 @@ process by varying the number of topics in steps of 10 as shown in the below tab
 | 40 | 1598.57 |
 | 50 | 1682.73 |
 
- 
- 
+5. From the above pattern, we can see that the topics are changing. It first starts to 
+decrease and then increase. Lower the perplexity, better the model. So, we can say that 
+30 is the ideal number of topics that we can use into our test set.
+
+| Topics        | Perplexity on Test Set |
+| ------------- |:-------------:| 
+| 30 | 936.54 |
+
+##### By the above analysis and recording the values from test set, we can say that 30 is the ideal number of topics
  
 
 
